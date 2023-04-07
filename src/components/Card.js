@@ -1,5 +1,10 @@
 const Card = () => {
-  return <div>I am the Card</div>
+  return (
+    <div className='card-container'>
+      <p>I am the Card</p>
+      <p>XXX</p>
+    </div>
+  )
 }
 
 export default Card
