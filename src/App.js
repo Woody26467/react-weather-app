@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import TodayDisplay from './components/TodayDisplay'
 import Card from './components/Card'
 import UnitContainer from './components/UnitContainer'
-// import '@fortawesome/fontawesome-free/js/all.js'
 
 const App = () => {
   const [location, setLocation] = useState(null)
@@ -30,14 +29,14 @@ const App = () => {
     const longitude = location?.longitude
 
     fetch(
-      `http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=civil&output=json`
+      `http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=civillight&output=json`
     )
       .then(response => response.json())
       .then(json => setData(json))
       .catch(err => console.error(err))
   }
 
-  console.log(data)
+  // console.log(data)
 
   useEffect(() => {
     getLocation()
@@ -48,14 +47,9 @@ const App = () => {
     <div className='weather-app'>
       <TodayDisplay today={data?.dataseries[0]} location={location} />
       <div className='cards-container'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data?.dataseries.slice(0, 8).map((day, index) => (
+          <Card key={index} day={day} />
+        ))}
       </div>
       <UnitContainer />
       {error}

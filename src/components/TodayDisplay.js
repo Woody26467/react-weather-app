@@ -1,4 +1,5 @@
 import '@fortawesome/fontawesome-free/js/all.js'
+import { getIcon } from '../helpers'
 
 const TodayDisplay = ({ today, location }) => {
   console.log('ON THE TODAYDISPLAY', today, location)
@@ -7,11 +8,13 @@ const TodayDisplay = ({ today, location }) => {
       <div className='info-container'>
         <h1>Today's forecast</h1>
         <h3>
-          For the location of lng {location?.longitude} and lat{' '}
-          {location?.latitude}
+          For the location of lng {location?.longitude.toFixed(2)} and
+          lat {location?.latitude.toFixed(2)}
         </h3>
       </div>
-      <div className='info-container'>ICON</div>
+      <div className='info-container'>
+        {today?.weather && getIcon(today.weather)}
+      </div>
     </div>
   )
 }
