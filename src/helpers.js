@@ -20,7 +20,7 @@ const getIcon = weatherType => {
     case 'ts':
       weatherStyle = <i className='fas fa-bolt'></i>
       break
-    case 'lightrainnight':
+    case 'lightrain':
       weatherStyle = <i className='fa-solid fa-cloud-rain'></i>
       break
     case 'rainnight':
@@ -32,7 +32,7 @@ const getIcon = weatherType => {
     case 'rain':
       weatherStyle = <i className='fas fa-droplet'></i>
       break
-    case 'oshower':
+    case 'isshower':
       weatherStyle = (
         <i className='fa-solid fa-cloud-showers-heavy'></i>
       )
