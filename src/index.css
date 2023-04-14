@@ -28,7 +28,7 @@ body {
 }
 
 .weather-app .card-container {
-  width: 40px;
+  width: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,4 +58,34 @@ body {
 
 .weather-app .today-container svg path {
   fill: rgb(253, 245, 131);
+}
+
+.icon-container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.weather-app p {
+  margin: 10px;
+}
+
+.card-container .min-max-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-container .min-max-container p {
+  margin: 0;
+  text-align: center;
+}
+
+.card-container .min-max-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.greyed {
+  color: rgb(255, 255, 255);
 }

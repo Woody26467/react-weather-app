@@ -2,7 +2,7 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import { getIcon } from '../helpers'
 
 const TodayDisplay = ({ today, location }) => {
-  console.log('ON THE TODAYDISPLAY', today, location)
+  // console.log('ON THE TODAYDISPLAY', today, location)
   return (
     <div className='today-container'>
       <div className='info-container'>

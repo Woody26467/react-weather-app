@@ -8,6 +8,7 @@ const App = () => {
   const [location, setLocation] = useState(null)
   const [error, setError] = useState(null)
   const [data, setData] = useState(null)
+  const [unit, setUnit] = useState('celcius')
 
   const getLocation = () => {
     if (!navigator.geolocation) {
@@ -46,15 +47,19 @@ const App = () => {
     }
   }, [location])
 
+  const handleClick = e => {
+    setUnit(e.target.id)
+  }
+
   return (
     <div className='weather-app'>
       <TodayDisplay today={data?.dataseries[0]} location={location} />
       <div className='cards-container'>
-        {data?.dataseries.slice(0, 8).map((day, index) => (
-          <Card key={index} day={day} />
+        {data?.dataseries.map((day, index) => (
+          <Card key={index} day={day} index={index} unit={unit} />
         ))}
       </div>
-      <UnitContainer />
+      <UnitContainer handleClick={handleClick} unit={unit} />
       {error}
     </div>
   )
